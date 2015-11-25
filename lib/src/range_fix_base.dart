@@ -48,6 +48,7 @@ class RangeFix {
     partialRange = range.cloneRange();
     partialRange.setEnd(endContainer, endOffset);
     rects.addAll(partialRange.getClientRects());
+    rects.sort((a, b) => a.top - b.top);
     return rects;
   }
 }
